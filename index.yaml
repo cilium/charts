@@ -1,0 +1,40 @@
+apiVersion: v1
+entries:
+  cilium:
+  - apiVersion: v1
+    appVersion: 1.6.5
+    created: "2020-01-23T10:13:58.134714366-08:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.6.5
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.6.5
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.6.5
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.6.5
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.6.5
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.6.5
+    description: Helm chart for Cilium
+    digest: 6184b1591ef808dc4741fce1c97be541118e804293ba7bb4a8aa9c570067cc62
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.6.5.tgz
+    version: 1.6.5
+generated: "2020-01-23T10:13:58.131889891-08:00"
