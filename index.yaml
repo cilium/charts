@@ -3,7 +3,7 @@ entries:
   cilium:
   - apiVersion: v1
     appVersion: 1.7.0-rc3
-    created: "2020-02-04T11:20:13.915670865-08:00"
+    created: "2020-02-11T15:00:41.447986391+01:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -39,7 +39,7 @@ entries:
     version: 1.7.0-rc3
   - apiVersion: v1
     appVersion: 1.6.6
-    created: "2020-02-04T11:20:13.912776959-08:00"
+    created: "2020-02-11T15:00:41.44393363+01:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -75,7 +75,7 @@ entries:
     version: 1.6.6
   - apiVersion: v1
     appVersion: 1.6.5
-    created: "2020-02-04T11:20:13.908724025-08:00"
+    created: "2020-02-11T15:00:41.440661668+01:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -109,4 +109,40 @@ entries:
     urls:
     - cilium-1.6.5.tgz
     version: 1.6.5
-generated: "2020-02-04T11:20:13.905539165-08:00"
+  - apiVersion: v1
+    appVersion: 1.6-dev
+    created: "2020-02-11T15:00:41.437667522+01:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.6-dev
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.6-dev
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.6-dev
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.6-dev
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.6-dev
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.6-dev
+    description: Helm chart for Cilium
+    digest: c2b7eb9b286e3ff59068bc8d7677dea0526fbf94e6456c43c5b4c5d2c67d20c8
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.6-dev.tgz
+    version: 1.6-dev
+generated: "2020-02-11T15:00:41.433811568+01:00"
