@@ -2,8 +2,44 @@ apiVersion: v1
 entries:
   cilium:
   - apiVersion: v1
+    appVersion: 1.7.0
+    created: "2020-02-18T17:30:42.736028393-08:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.7.0
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.7.0
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.7.0
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.7.0
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.7.0
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.7.0
+    description: Helm chart for Cilium
+    digest: eec8d07eec1e680c2e87cc46bf188b0ad2ab9d13486e7d263ea21d15e94f96d2
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.7.0.tgz
+    version: 1.7.0
+  - apiVersion: v1
     appVersion: 1.7.0-rc4
-    created: "2020-02-12T16:30:19.073605127-08:00"
+    created: "2020-02-18T17:30:42.73322167-08:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -39,7 +75,7 @@ entries:
     version: 1.7.0-rc4
   - apiVersion: v1
     appVersion: 1.7.0-rc3
-    created: "2020-02-12T16:30:19.070832613-08:00"
+    created: "2020-02-18T17:30:42.731034475-08:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -75,7 +111,7 @@ entries:
     version: 1.7.0-rc3
   - apiVersion: v1
     appVersion: 1.6.6
-    created: "2020-02-12T16:30:19.066860993-08:00"
+    created: "2020-02-18T17:30:42.72687178-08:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -111,7 +147,7 @@ entries:
     version: 1.6.6
   - apiVersion: v1
     appVersion: 1.6.5
-    created: "2020-02-12T16:30:19.063264481-08:00"
+    created: "2020-02-18T17:30:42.719252515-08:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -147,7 +183,7 @@ entries:
     version: 1.6.5
   - apiVersion: v1
     appVersion: 1.6-dev
-    created: "2020-02-12T16:30:19.059012135-08:00"
+    created: "2020-02-18T17:30:42.709101117-08:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -181,4 +217,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2020-02-12T16:30:19.055976427-08:00"
+generated: "2020-02-18T17:30:42.704919987-08:00"
