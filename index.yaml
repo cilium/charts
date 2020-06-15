@@ -2,8 +2,57 @@ apiVersion: v1
 entries:
   cilium:
   - apiVersion: v1
+    appVersion: 1.8.0-rc3
+    created: "2020-06-15T17:14:50.003741131+02:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: global.hubble.relay.enabled
+      name: hubble-relay
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: global.hubble.ui.enabled
+      name: hubble-ui
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.8.0-rc3
+    - condition: global.prometheus.enabled && global.prometheus.serviceMonitor.enabled
+      name: prometheus-crd
+      repository: ""
+      version: 1.8.0-rc3
+    description: Helm chart for Cilium
+    digest: a8b097d8ba1a60c09288750d4a3c0ac3afaae5706438df7e39f864c0939fbd4e
+    home: https://cilium.io/
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.8.0-rc3.tgz
+    version: 1.8.0-rc3
+  - apiVersion: v1
     appVersion: 1.8.0-rc2
-    created: "2020-06-12T14:59:58.537962172+02:00"
+    created: "2020-06-15T17:14:49.998759157+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -56,7 +105,7 @@ entries:
     version: 1.8.0-rc2
   - apiVersion: v1
     appVersion: 1.8.0-rc1
-    created: "2020-06-12T14:59:58.534876661+02:00"
+    created: "2020-06-15T17:14:49.993787192+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -105,7 +154,7 @@ entries:
     version: 1.8.0-rc1
   - apiVersion: v1
     appVersion: 1.7.5
-    created: "2020-06-12T14:59:58.532178963+02:00"
+    created: "2020-06-15T17:14:49.990790351+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -141,7 +190,7 @@ entries:
     version: 1.7.5
   - apiVersion: v1
     appVersion: 1.7.4
-    created: "2020-06-12T14:59:58.530377773+02:00"
+    created: "2020-06-15T17:14:49.98800382+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -177,7 +226,7 @@ entries:
     version: 1.7.4
   - apiVersion: v1
     appVersion: 1.7.3
-    created: "2020-06-12T14:59:58.527923993+02:00"
+    created: "2020-06-15T17:14:49.985963912+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -213,7 +262,7 @@ entries:
     version: 1.7.3
   - apiVersion: v1
     appVersion: 1.7.2
-    created: "2020-06-12T14:59:58.526083262+02:00"
+    created: "2020-06-15T17:14:49.983519478+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -249,7 +298,7 @@ entries:
     version: 1.7.2
   - apiVersion: v1
     appVersion: 1.7.1
-    created: "2020-06-12T14:59:58.52354856+02:00"
+    created: "2020-06-15T17:14:49.97967011+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -285,7 +334,7 @@ entries:
     version: 1.7.1
   - apiVersion: v1
     appVersion: 1.7.0
-    created: "2020-06-12T14:59:58.520296175+02:00"
+    created: "2020-06-15T17:14:49.974372386+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -321,7 +370,7 @@ entries:
     version: 1.7.0
   - apiVersion: v1
     appVersion: 1.7.0-rc4
-    created: "2020-06-12T14:59:58.517685934+02:00"
+    created: "2020-06-15T17:14:49.97005103+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -357,7 +406,7 @@ entries:
     version: 1.7.0-rc4
   - apiVersion: v1
     appVersion: 1.7.0-rc3
-    created: "2020-06-12T14:59:58.514096879+02:00"
+    created: "2020-06-15T17:14:49.966604095+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -393,7 +442,7 @@ entries:
     version: 1.7.0-rc3
   - apiVersion: v1
     appVersion: 1.7-dev
-    created: "2020-06-12T14:59:58.506898811+02:00"
+    created: "2020-06-15T17:14:49.961253912+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -429,7 +478,7 @@ entries:
     version: 1.7-dev
   - apiVersion: v1
     appVersion: 1.6.9
-    created: "2020-06-12T14:59:58.504645564+02:00"
+    created: "2020-06-15T17:14:49.958680513+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -465,7 +514,7 @@ entries:
     version: 1.6.9
   - apiVersion: v1
     appVersion: 1.6.8
-    created: "2020-06-12T14:59:58.502467848+02:00"
+    created: "2020-06-15T17:14:49.956827053+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -501,7 +550,7 @@ entries:
     version: 1.6.8
   - apiVersion: v1
     appVersion: 1.6.7
-    created: "2020-06-12T14:59:58.500906833+02:00"
+    created: "2020-06-15T17:14:49.954905269+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -537,7 +586,7 @@ entries:
     version: 1.6.7
   - apiVersion: v1
     appVersion: 1.6.6
-    created: "2020-06-12T14:59:58.498458002+02:00"
+    created: "2020-06-15T17:14:49.952731085+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -573,7 +622,7 @@ entries:
     version: 1.6.6
   - apiVersion: v1
     appVersion: 1.6.5
-    created: "2020-06-12T14:59:58.49378664+02:00"
+    created: "2020-06-15T17:14:49.948387428+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -609,7 +658,7 @@ entries:
     version: 1.6.5
   - apiVersion: v1
     appVersion: 1.6-dev
-    created: "2020-06-12T14:59:58.487891581+02:00"
+    created: "2020-06-15T17:14:49.94348575+02:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -643,4 +692,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2020-06-12T14:59:58.480524351+02:00"
+generated: "2020-06-15T17:14:49.93500337+02:00"
