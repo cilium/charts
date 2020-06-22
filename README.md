@@ -21,5 +21,6 @@ This repository holds helm templates for the following releases:
 
 The following development releases pull the latest backports for the corresponding branch:
 
+* [v1.8-dev](https://github.com/cilium/cilium/tree/v1.8) (_[source](https://github.com/cilium/cilium/tree/v1.8/install/kubernetes/cilium)_)
 * [v1.7-dev](https://github.com/cilium/cilium/tree/v1.7) (_[source](https://github.com/cilium/cilium/tree/v1.7/install/kubernetes/cilium)_)
 * [v1.6-dev](https://github.com/cilium/cilium/tree/v1.6) (_[source](https://github.com/cilium/cilium/tree/v1.6/install/kubernetes/cilium)_)
