@@ -7,6 +7,7 @@ This repository holds helm templates for the following releases:
 * [v1.8.0-rc3](https://github.com/cilium/cilium/releases/tag/v1.8.0-rc3) (_[source](https://github.com/cilium/cilium/tree/v1.8.0-rc3/install/kubernetes/cilium)_)
 * [v1.8.0-rc2](https://github.com/cilium/cilium/releases/tag/v1.8.0-rc2) (_[source](https://github.com/cilium/cilium/tree/v1.8.0-rc2/install/kubernetes/cilium)_)
 * [v1.8.0-rc1](https://github.com/cilium/cilium/releases/tag/v1.8.0-rc1) (_[source](https://github.com/cilium/cilium/tree/v1.8.0-rc1/install/kubernetes/cilium)_)
+* [v1.7.7](https://github.com/cilium/cilium/releases/tag/v1.7.7) (_[source](https://github.com/cilium/cilium/tree/v1.7.7/install/kubernetes/cilium)_)
 * [v1.7.6](https://github.com/cilium/cilium/releases/tag/v1.7.6) (_[source](https://github.com/cilium/cilium/tree/v1.7.6/install/kubernetes/cilium)_)
 * [v1.7.5](https://github.com/cilium/cilium/releases/tag/v1.7.5) (_[source](https://github.com/cilium/cilium/tree/v1.7.5/install/kubernetes/cilium)_)
 * [v1.7.4](https://github.com/cilium/cilium/releases/tag/v1.7.4) (_[source](https://github.com/cilium/cilium/tree/v1.7.4/install/kubernetes/cilium)_)
