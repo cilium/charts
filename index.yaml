@@ -3,7 +3,7 @@ entries:
   cilium:
   - apiVersion: v2
     appVersion: 1.9.0-rc0
-    created: "2020-08-31T21:27:15.258195031+02:00"
+    created: "2020-09-01T20:25:37.576057055-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -52,7 +52,7 @@ entries:
     version: 1.9.0-rc0
   - apiVersion: v1
     appVersion: 1.8.2
-    created: "2020-08-31T21:27:15.25529302+02:00"
+    created: "2020-09-01T20:25:37.57309788-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -101,7 +101,7 @@ entries:
     version: 1.8.2
   - apiVersion: v1
     appVersion: 1.8.1
-    created: "2020-08-31T21:27:15.252457017+02:00"
+    created: "2020-09-01T20:25:37.56956766-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -150,7 +150,7 @@ entries:
     version: 1.8.1
   - apiVersion: v1
     appVersion: 1.8.0
-    created: "2020-08-31T21:27:15.248930399+02:00"
+    created: "2020-09-01T20:25:37.566388594-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -199,7 +199,7 @@ entries:
     version: 1.8.0
   - apiVersion: v1
     appVersion: 1.8.0-rc4
-    created: "2020-08-31T21:27:15.246110644+02:00"
+    created: "2020-09-01T20:25:37.563427073-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -248,7 +248,7 @@ entries:
     version: 1.8.0-rc4
   - apiVersion: v1
     appVersion: 1.8.0-rc3
-    created: "2020-08-31T21:27:15.243338767+02:00"
+    created: "2020-09-01T20:25:37.560476974-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -297,7 +297,7 @@ entries:
     version: 1.8.0-rc3
   - apiVersion: v1
     appVersion: 1.8.0-rc2
-    created: "2020-08-31T21:27:15.239972229+02:00"
+    created: "2020-09-01T20:25:37.556016186-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -350,7 +350,7 @@ entries:
     version: 1.8.0-rc2
   - apiVersion: v1
     appVersion: 1.8.0-rc1
-    created: "2020-08-31T21:27:15.237085497+02:00"
+    created: "2020-09-01T20:25:37.552913857-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -399,7 +399,7 @@ entries:
     version: 1.8.0-rc1
   - apiVersion: v1
     appVersion: 1.8-dev
-    created: "2020-08-31T21:27:15.234408886+02:00"
+    created: "2020-09-01T20:25:37.54972748-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -447,8 +447,44 @@ entries:
     - cilium-1.8-dev.tgz
     version: 1.8-dev
   - apiVersion: v1
+    appVersion: 1.7.9
+    created: "2020-09-01T20:25:37.546141554-07:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.7.9
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.7.9
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.7.9
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.7.9
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.7.9
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.7.9
+    description: Helm chart for Cilium
+    digest: 23fb1a429a64a7ea29d29f6ce0b00886f9a1e2f6c3c76b920944ba8ab800d6dd
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.7.9.tgz
+    version: 1.7.9
+  - apiVersion: v1
     appVersion: 1.7.8
-    created: "2020-08-31T21:27:15.23086598+02:00"
+    created: "2020-09-01T20:25:37.544531324-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -484,7 +520,7 @@ entries:
     version: 1.7.8
   - apiVersion: v1
     appVersion: 1.7.7
-    created: "2020-08-31T21:27:15.229077325+02:00"
+    created: "2020-09-01T20:25:37.542543654-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -520,7 +556,7 @@ entries:
     version: 1.7.7
   - apiVersion: v1
     appVersion: 1.7.6
-    created: "2020-08-31T21:27:15.227301039+02:00"
+    created: "2020-09-01T20:25:37.54065308-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -556,7 +592,7 @@ entries:
     version: 1.7.6
   - apiVersion: v1
     appVersion: 1.7.5
-    created: "2020-08-31T21:27:15.225547852+02:00"
+    created: "2020-09-01T20:25:37.538668977-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -592,7 +628,7 @@ entries:
     version: 1.7.5
   - apiVersion: v1
     appVersion: 1.7.4
-    created: "2020-08-31T21:27:15.22381359+02:00"
+    created: "2020-09-01T20:25:37.535735618-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -628,7 +664,7 @@ entries:
     version: 1.7.4
   - apiVersion: v1
     appVersion: 1.7.3
-    created: "2020-08-31T21:27:15.222071457+02:00"
+    created: "2020-09-01T20:25:37.533383408-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -664,7 +700,7 @@ entries:
     version: 1.7.3
   - apiVersion: v1
     appVersion: 1.7.2
-    created: "2020-08-31T21:27:15.21965377+02:00"
+    created: "2020-09-01T20:25:37.531581743-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -700,7 +736,7 @@ entries:
     version: 1.7.2
   - apiVersion: v1
     appVersion: 1.7.1
-    created: "2020-08-31T21:27:15.21801983+02:00"
+    created: "2020-09-01T20:25:37.529728708-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -736,7 +772,7 @@ entries:
     version: 1.7.1
   - apiVersion: v1
     appVersion: 1.7.0
-    created: "2020-08-31T21:27:15.216405956+02:00"
+    created: "2020-09-01T20:25:37.527915094-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -772,7 +808,7 @@ entries:
     version: 1.7.0
   - apiVersion: v1
     appVersion: 1.7.0-rc4
-    created: "2020-08-31T21:27:15.214844824+02:00"
+    created: "2020-09-01T20:25:37.526132787-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -808,7 +844,7 @@ entries:
     version: 1.7.0-rc4
   - apiVersion: v1
     appVersion: 1.7.0-rc3
-    created: "2020-08-31T21:27:15.213241608+02:00"
+    created: "2020-09-01T20:25:37.523195264-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -844,7 +880,7 @@ entries:
     version: 1.7.0-rc3
   - apiVersion: v1
     appVersion: 1.7-dev
-    created: "2020-08-31T21:27:15.20921647+02:00"
+    created: "2020-09-01T20:25:37.520114346-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -880,7 +916,7 @@ entries:
     version: 1.7-dev
   - apiVersion: v1
     appVersion: 1.6.11
-    created: "2020-08-31T21:27:15.195135271+02:00"
+    created: "2020-09-01T20:25:37.504736424-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -916,7 +952,7 @@ entries:
     version: 1.6.11
   - apiVersion: v1
     appVersion: 1.6.10
-    created: "2020-08-31T21:27:15.193101824+02:00"
+    created: "2020-09-01T20:25:37.502532397-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -952,7 +988,7 @@ entries:
     version: 1.6.10
   - apiVersion: v1
     appVersion: 1.6.9
-    created: "2020-08-31T21:27:15.207441199+02:00"
+    created: "2020-09-01T20:25:37.517764125-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -988,7 +1024,7 @@ entries:
     version: 1.6.9
   - apiVersion: v1
     appVersion: 1.6.8
-    created: "2020-08-31T21:27:15.205817985+02:00"
+    created: "2020-09-01T20:25:37.515907554-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -1024,7 +1060,7 @@ entries:
     version: 1.6.8
   - apiVersion: v1
     appVersion: 1.6.7
-    created: "2020-08-31T21:27:15.204240542+02:00"
+    created: "2020-09-01T20:25:37.513022299-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -1060,7 +1096,7 @@ entries:
     version: 1.6.7
   - apiVersion: v1
     appVersion: 1.6.6
-    created: "2020-08-31T21:27:15.202052487+02:00"
+    created: "2020-09-01T20:25:37.511336169-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -1096,7 +1132,7 @@ entries:
     version: 1.6.6
   - apiVersion: v1
     appVersion: 1.6.5
-    created: "2020-08-31T21:27:15.19875886+02:00"
+    created: "2020-09-01T20:25:37.508417283-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -1132,7 +1168,7 @@ entries:
     version: 1.6.5
   - apiVersion: v1
     appVersion: 1.6-dev
-    created: "2020-08-31T21:27:15.190571384+02:00"
+    created: "2020-09-01T20:25:37.49697572-07:00"
     dependencies:
     - condition: agent.enabled
       name: agent
@@ -1166,4 +1202,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2020-08-31T21:27:15.18841723+02:00"
+generated: "2020-09-01T20:25:37.495151112-07:00"
