@@ -16,7 +16,8 @@ if [ ! -e $CILIUM_DIR/install/kubernetes/cilium/values.yaml ]; then
 	exit 1
 fi
 
-VERSION=$(cat $CILIUM_DIR/VERSION)
+CHART_PATH="$CILIUM_DIR/install/kubernetes/cilium/Chart.yaml"
+VERSION="$(awk '/version:/ { print $2; exit; } ' $CHART_PATH)"
 cd $CILIUM_DIR/install/kubernetes
 helm package --destination "$CWD" cilium
 cd -
