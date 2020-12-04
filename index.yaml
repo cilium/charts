@@ -1271,7 +1271,7 @@ entries:
       repository: ""
       version: 1.7-dev
     description: Helm chart for Cilium
-    digest: 392b3d8fdbf9840a75c6f9a855cfd47a9f3621c097c2c8e906e25e4c747007d2
+    digest: c7637bb01c5118d7f989a9d8710fcaa0ac48374141291c8cccf68e627cbac720
     name: cilium
     sources:
     - https://github.com/cilium/cilium
@@ -1602,4 +1602,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2020-12-04T18:33:02.160308619+01:00"
+generated: "2020-12-04T18:49:03.417021991+01:00"
