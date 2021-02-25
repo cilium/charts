@@ -1125,6 +1125,42 @@ entries:
     - cilium-1.8-dev.tgz
     version: 1.8-dev
   - apiVersion: v1
+    appVersion: 1.7.14
+    created: "2021-02-25T14:51:11-08:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.7.14
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.7.14
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.7.14
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.7.14
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.7.14
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.7.14
+    description: Helm chart for Cilium
+    digest: fac25151481c997b7d130612fbaea6c26f79e5983272541f720f4d8682bdca81
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.7.14.tgz
+    version: 1.7.14
+  - apiVersion: v1
     appVersion: 1.7.13
     created: "2021-01-27T14:58:32-08:00"
     dependencies:
@@ -2060,4 +2096,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2021-02-17T16:52:21.389955172-08:00"
+generated: "2021-02-25T14:51:04.80635-08:00"
