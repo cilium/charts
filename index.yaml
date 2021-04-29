@@ -60,7 +60,7 @@ entries:
     appVersion: 1.10.0-rc1
     created: "2021-04-28T12:52:38+02:00"
     description: eBPF-based Networking, Security, and Observability
-    digest: d2eb538ec1a7ba9074208d70715f84391963a2d13fa343b48edfd1ce6241e126
+    digest: a672eed0a45f77d41df68715463cd83e6abc9bfe08397c6320a5ce9b8e397eda
     home: https://cilium.io/
     icon: https://cdn.jsdelivr.net/gh/cilium/cilium@v1.10.0-rc1/Documentation/images/logo-solo.svg
     keywords:
@@ -2574,4 +2574,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2021-04-28T12:52:20.41410263+02:00"
+generated: "2021-04-29T16:37:45.494239618+02:00"
