@@ -1408,6 +1408,55 @@ entries:
     - cilium-1.9-dev.tgz
     version: 1.9-dev
   - apiVersion: v1
+    appVersion: 1.8.11
+    created: "2021-07-23T10:31:18-07:00"
+    dependencies:
+    - condition: agent.enabled
+      name: agent
+      repository: ""
+      version: 1.8.11
+    - condition: config.enabled
+      name: config
+      repository: ""
+      version: 1.8.11
+    - condition: global.hubble.relay.enabled
+      name: hubble-relay
+      repository: ""
+      version: 1.8.11
+    - condition: global.hubble.ui.enabled
+      name: hubble-ui
+      repository: ""
+      version: 1.8.11
+    - condition: operator.enabled
+      name: operator
+      repository: ""
+      version: 1.8.11
+    - condition: global.etcd.managed
+      name: managed-etcd
+      repository: ""
+      version: 1.8.11
+    - condition: preflight.enabled
+      name: preflight
+      repository: ""
+      version: 1.8.11
+    - condition: global.nodeinit.enabled
+      name: nodeinit
+      repository: ""
+      version: 1.8.11
+    - condition: global.prometheus.enabled && global.prometheus.serviceMonitor.enabled
+      name: prometheus-crd
+      repository: ""
+      version: 1.8.11
+    description: Helm chart for Cilium
+    digest: ba6127f642ba7ccad55a24d581d46e22ebbb503232a1bf40a0660ad3b60d3727
+    home: https://cilium.io/
+    name: cilium
+    sources:
+    - https://github.com/cilium/cilium
+    urls:
+    - cilium-1.8.11.tgz
+    version: 1.8.11
+  - apiVersion: v1
     appVersion: 1.8.10
     created: "2021-05-17T09:45:14-07:00"
     dependencies:
@@ -3239,4 +3288,4 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2021-07-19T17:20:20.988634693-07:00"
+generated: "2021-07-23T10:31:01.904584728-07:00"
