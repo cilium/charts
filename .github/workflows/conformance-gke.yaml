@@ -62,18 +62,7 @@ jobs:
 
       - name: Create GKE cluster
         run: |
-          if [[ ${{ steps.vars.outputs.chartVersion }} == 1.10.* ]]; then
-            gcloud container clusters create ${{ env.clusterName }} \
-              --labels "usage=${{ github.repository_owner }}-${{ github.event.repository.name }},owner=${{ steps.vars.outputs.owner }}" \
-              --zone ${{ env.zone }} \
-              --image-type COS_CONTAINERD \
-              --num-nodes 2 \
-              --machine-type e2-custom-2-4096 \
-              --disk-type pd-standard \
-              --disk-size 10GB \
-              --node-taints node.cilium.io/agent-not-ready=true:NoSchedule \
-              --preemptible
-          elif [[ ${{ steps.vars.outputs.chartVersion }} == 1.9.* || \
+          if [[ ${{ steps.vars.outputs.chartVersion }} == 1.9.* || \
                   ${{ steps.vars.outputs.chartVersion }} == 1.8.* ]]; then
             gcloud container clusters create ${{ env.clusterName }} \
               --labels "usage=${{ github.repository_owner }}-${{ github.event.repository.name }},owner=${{ steps.vars.outputs.owner }}" \
@@ -83,6 +72,17 @@ jobs:
               --machine-type e2-custom-2-4096 \
               --disk-type pd-standard \
               --disk-size 10GB \
+              --preemptible
+          else
+            gcloud container clusters create ${{ env.clusterName }} \
+              --labels "usage=${{ github.repository_owner }}-${{ github.event.repository.name }},owner=${{ steps.vars.outputs.owner }}" \
+              --zone ${{ env.zone }} \
+              --image-type COS_CONTAINERD \
+              --num-nodes 2 \
+              --machine-type e2-custom-2-4096 \
+              --disk-type pd-standard \
+              --disk-size 10GB \
+              --node-taints node.cilium.io/agent-not-ready=true:NoSchedule \
               --preemptible
           fi
 
