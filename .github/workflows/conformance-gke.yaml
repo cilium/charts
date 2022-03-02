@@ -146,16 +146,7 @@ jobs:
 
       - name: Run connectivity test
         run: |
-          if [[ ${{ steps.vars.outputs.chartVersion }} == 1.8.* ]]; then
-            kubectl apply \
-              -f "https://raw.githubusercontent.com/cilium/cilium/${{ steps.vars.outputs.chartVersion }}/examples/kubernetes/connectivity-check/connectivity-check.yaml"
-            # wait for all pods in the default namespace since cilium-cli
-            # does not support connectivity test in 1.8
-            # can be removed once cilium-cli 0.8.5 is released
-            kubectl wait pod -n default --for=condition=Ready --timeout=300s -l k8s!=all
-          else
-            cilium connectivity test
-          fi
+          cilium connectivity test
 
       - name: Post-test information gathering
         if: ${{ failure() }}
