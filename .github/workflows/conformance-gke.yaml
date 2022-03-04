@@ -98,7 +98,17 @@ jobs:
           echo "NATIVE_CIDR $NATIVE_CIDR"
           helm repo add cilium https://helm.cilium.io
           helm repo update
-          if [[ ${{ steps.vars.outputs.chartVersion }} == 1.11.* ]]; then
+          if [[ ${{ steps.vars.outputs.chartVersion }} == 1.12.* ]]; then
+            helm install cilium cilium/cilium --version ${{ steps.vars.outputs.chartVersion }} \
+              --namespace kube-system \
+              --set nodeinit.enabled=true \
+              --set nodeinit.reconfigureKubelet=true \
+              --set nodeinit.removeCbrBridge=true \
+              --set cni.binPath=/home/kubernetes/bin \
+              --set gke.enabled=true \
+              --set ipam.mode=kubernetes \
+              --set nativeRoutingCIDR="${NATIVE_CIDR}"
+          elif [[ ${{ steps.vars.outputs.chartVersion }} == 1.11.* ]]; then
             helm install cilium cilium/cilium --version ${{ steps.vars.outputs.chartVersion }} \
               --namespace kube-system \
               --set nodeinit.enabled=true \
