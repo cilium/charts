@@ -27,7 +27,7 @@ jobs:
           readonly local last_commit_log=$(git log -1 --pretty=format:"%s")
           echo "last commit log: $last_commit_log"
 
-          readonly local chart_version=$(echo "$last_commit_log" | grep -Eo "Add[^@]+" | sed 's/Add\ //' )
+          readonly local chart_version=$(echo "$last_commit_log" | grep -Eo "Add cilium [^@]+" | sed 's/Add\ cilium\ //' )
           echo "Helm chart detected version: '${chart_version}'"
 
           if [[ -n "${chart_version}" ]]; then
@@ -39,7 +39,7 @@ jobs:
         run: |
           if [[ -z "${{ steps.vars.outputs.chartVersion }}" ]]; then
             echo "Not running helm e2e tests since the helm chart version was not detected in commit message"
-            echo "Expected format: 'Add <chart-version>@<upstream-commit-sha>'"
+            echo "Expected format: 'Add cilium <chart-version>@<upstream-commit-sha>'"
             exit 78
           fi
 
