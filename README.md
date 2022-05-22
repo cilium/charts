@@ -1,4 +1,4 @@
-This repository holds helm templates for the following releases:
+This repository holds helm templates for the following Cilium releases:
 
 * [v1.12.0-rc2](https://github.com/cilium/cilium/releases/tag/v1.12.0-rc2) (_[source](https://github.com/cilium/cilium/tree/v1.12.0-rc2/install/kubernetes/cilium)_)
 * [v1.12.0-rc1](https://github.com/cilium/cilium/releases/tag/v1.12.0-rc1) (_[source](https://github.com/cilium/cilium/tree/v1.12.0-rc1/install/kubernetes/cilium)_)
@@ -94,8 +94,11 @@ This repository holds helm templates for the following releases:
 * [v1.6.7](https://github.com/cilium/cilium/releases/tag/v1.6.7) (_[source](https://github.com/cilium/cilium/tree/v1.6.7/install/kubernetes/cilium)_)
 * [v1.6.6](https://github.com/cilium/cilium/releases/tag/v1.6.6) (_[source](https://github.com/cilium/cilium/tree/v1.6.6/install/kubernetes/cilium)_)
 * [v1.6.5](https://github.com/cilium/cilium/releases/tag/v1.6.5) (_[source](https://github.com/cilium/cilium/tree/v1.6.5/install/kubernetes/cilium)_)
+This repository holds helm templates for the following Tetragon releases:
 
-The following development releases pull the latest backports for the corresponding branch:
+* [v0.8.0](https://github.com/cilium/tetragon/releases/tag/v0.8.0) (_[source](https://github.com/cilium/tetragon/tree/v0.8.0/install/kubernetes)_)
+
+The following Cilium development releases pull the latest backports for the corresponding branch:
 
 * [v1.9-dev](https://github.com/cilium/cilium/tree/v1.9) (_[source](https://github.com/cilium/cilium/tree/v1.9/install/kubernetes/cilium)_)
 * [v1.8-dev](https://github.com/cilium/cilium/tree/v1.8) (_[source](https://github.com/cilium/cilium/tree/v1.8/install/kubernetes/cilium)_)

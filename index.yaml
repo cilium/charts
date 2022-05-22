@@ -5734,4 +5734,15 @@ entries:
     urls:
     - cilium-1.6-dev.tgz
     version: 1.6-dev
-generated: "2022-05-16T12:22:09.67396896-07:00"
+  tetragon:
+  - apiVersion: v2
+    appVersion: 0.8.0
+    created: "2022-05-22T00:09:23+00:00"
+    description: Helm chart for Tetragon
+    digest: 7b78ae2a7defa8290c3dd6c4134c76400f99babfac6afbfc8b99b870ba98b3b5
+    name: tetragon
+    type: application
+    urls:
+    - tetragon-0.8.0.tgz
+    version: 0.8.0
+generated: "2022-05-22T00:09:23.311853658Z"
