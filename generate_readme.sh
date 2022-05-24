@@ -12,6 +12,7 @@ for version in $(find -- * -name 'cilium-*.tgz' ! -name "*dev*" | cut -d - -f 2-
 done
 
 cat << EOF
+
 This repository holds helm templates for the following Tetragon releases:
 
 EOF
@@ -29,3 +30,4 @@ EOF
 for version in $(find -- * -name 'cilium-*-dev.tgz' | cut -d - -f 2 | sort -Vr ); do
   echo "* [v$version-dev](https://github.com/cilium/cilium/tree/v$version) (_[source](https://github.com/cilium/cilium/tree/v$version/install/kubernetes/cilium)_)"
 done
+
