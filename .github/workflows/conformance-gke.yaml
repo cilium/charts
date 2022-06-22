@@ -107,7 +107,7 @@ jobs:
               --set cni.binPath=/home/kubernetes/bin \
               --set gke.enabled=true \
               --set ipam.mode=kubernetes \
-              --set nativeRoutingCIDR="${NATIVE_CIDR}"
+              --set ipv4NativeRoutingCIDR="${NATIVE_CIDR}"
           elif [[ ${{ steps.vars.outputs.chartVersion }} == 1.11.* ]]; then
             helm install cilium cilium/cilium --version ${{ steps.vars.outputs.chartVersion }} \
               --namespace kube-system \
