@@ -24,7 +24,7 @@ jobs:
         id: vars
         run: |
           # Get last commit message
-          readonly local last_commit_log=$(git log -1 --pretty=format:"%s")
+          readonly local last_commit_log=$(git log -1 --grep "^Add tetragon" --pretty=format:"%s")
           echo "last commit log: $last_commit_log"
 
           readonly local chart_version=$(echo "$last_commit_log" | grep -Eo "Add tetragon [^@]+" | sed 's/Add\ tetragon\ //' )
