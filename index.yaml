@@ -237,7 +237,7 @@ entries:
     appVersion: 1.13.0-rc1
     created: "2022-09-30T14:54:43-07:00"
     description: eBPF-based Networking, Security, and Observability
-    digest: b2e0552e720c5514fcd2d2a2f27f79eae3c896195f67728b82346ab05609e61a
+    digest: 68361e8947767380a904887c71ce467dc32b53a3bf1230ce1106551738ea1211
     home: https://cilium.io/
     icon: https://cdn.jsdelivr.net/gh/cilium/cilium@master/Documentation/images/logo-solo.svg
     keywords:
@@ -7790,4 +7790,4 @@ entries:
     urls:
     - tetragon-0.8.0.tgz
     version: 0.8.0
-generated: "2022-11-01T14:40:34.551855384+01:00"
+generated: "2022-11-01T14:41:22.148849222+01:00"
