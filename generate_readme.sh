@@ -10,7 +10,7 @@ EOF
 for version in \
     $(find -- * -name 'cilium-*.tgz' ! -name "*dev*" \
     | cut -d - -f 2- \
-    | cut -d . -f -3 \
+    | xargs basename -s .tgz \
     | sed '/-/!{s/$/_/}' \
     | sort -Vr \
     | sed 's/_$//'); do
@@ -26,7 +26,7 @@ EOF
 for version in \
     $(find -- * -name 'tetragon-*.tgz' ! -name "*dev*" \
     | cut -d - -f 2- \
-    | cut -d . -f -3 \
+    | xargs basename -s .tgz \
     | sed '/-/!{s/$/_/}' \
     | sort -Vr \
     | sed 's/_$//'); do
