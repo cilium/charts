@@ -56,7 +56,7 @@ jobs:
 
       - name: Set up gcloud credentials
         id: 'auth'
-        uses: 'google-github-actions/auth@ef5d53e30bbcd8d0836f4288f5e50ff3e086997d'
+        uses: 'google-github-actions/auth@35b0e87d162680511bf346c299f71c9c5c379033'
         with:
           credentials_json: '${{ secrets.GCP_PR_SA_KEY }}'
 
