@@ -9,7 +9,6 @@ on:
 env:
   clusterName: ${{ github.repository_owner }}-${{ github.event.repository.name }}-${{ github.run_id }}
   zone: us-west2-a
-  k8s_version: 1.23
   # https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
   USE_GKE_GCLOUD_AUTH_PLUGIN: True
 
@@ -79,7 +78,6 @@ jobs:
           gcloud container clusters create ${{ env.clusterName }} \
             --labels "usage=${{ github.repository_owner }}-${{ github.event.repository.name }},owner=${{ steps.vars.outputs.owner }}" \
             --zone ${{ env.zone }} \
-            --cluster-version ${{ env.k8s_version }} \
             --image-type COS_CONTAINERD \
             --num-nodes 2 \
             --machine-type e2-custom-2-4096 \
