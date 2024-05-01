@@ -723,7 +723,7 @@ entries:
         can be used for pooled IPAM (i.e. the multi-pool IPAM mode).\n"
     apiVersion: v2
     appVersion: 1.15.1
-    created: "2024-02-15T00:44:36+00:00"
+    created: "2024-02-15T00:44:36Z"
     description: eBPF-based Networking, Security, and Observability
     digest: f5e9ba3b7a98fb1d391ff98b3af0bb711f61aa2d585b24554c1b2946fe5d5ea1
     home: https://cilium.io/
@@ -2123,7 +2123,7 @@ entries:
             CiliumPodIPPool defines an IP pool that can be used for pooled IPAM (i.e. the multi-pool IPAM mode).
     apiVersion: v2
     appVersion: 1.14.7
-    created: "2024-02-14T17:23:58+00:00"
+    created: "2024-02-14T17:23:58Z"
     description: eBPF-based Networking, Security, and Observability
     digest: f7646084f91f3e994e102d41a22672b73459d66cac3a90ef23e7ecb601dccd1b
     home: https://cilium.io/
@@ -2848,7 +2848,7 @@ entries:
             CiliumPodIPPool defines an IP pool that can be used for pooled IPAM (i.e. the multi-pool IPAM mode).
     apiVersion: v2
     appVersion: 1.14.2
-    created: "2023-09-12T21:21:56+00:00"
+    created: "2023-09-12T21:21:56Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 5ed64fbbf48e5d226ef0080eb2c6c00f156f4505a795d637bd2f365c2fad82aa
     home: https://cilium.io/
@@ -4593,7 +4593,7 @@ entries:
             nodes indicated by a label selector.
     apiVersion: v2
     appVersion: 1.13.12
-    created: "2024-02-14T22:53:02+00:00"
+    created: "2024-02-14T22:53:02Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 0c9a0dde02714958ed4b867d3e2f05d1198d16b397bf3fa33b025c889af83961
     home: https://cilium.io/
@@ -5223,7 +5223,7 @@ entries:
             nodes indicated by a label selector.
     apiVersion: v2
     appVersion: 1.13.7
-    created: "2023-09-12T23:39:40+00:00"
+    created: "2023-09-12T23:39:40Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 1587cad2e38ccd6cfa14efb77acc65134bcdb6a2f4c9e2ad0136e2836cd6ef3f
     home: https://cilium.io/
@@ -6991,7 +6991,7 @@ entries:
             advertise LoadBalancer Services to BGP peers defined by Cilium BGP Peering Policies.
     apiVersion: v2
     appVersion: 1.12.19
-    created: "2024-02-14T22:54:25+00:00"
+    created: "2024-02-14T22:54:25Z"
     description: eBPF-based Networking, Security, and Observability
     digest: fbf91a226958031533dda75ac3709b3d4fac53ebad8db479f26d6f49dcd758eb
     home: https://cilium.io/
@@ -7626,7 +7626,7 @@ entries:
             advertise LoadBalancer Services to BGP peers defined by Cilium BGP Peering Policies.
     apiVersion: v2
     appVersion: 1.12.14
-    created: "2023-09-13T17:07:12+00:00"
+    created: "2023-09-13T17:07:12Z"
     description: eBPF-based Networking, Security, and Observability
     digest: a64c6e09df5ae167c08933ad7cee4f74c99fcd36a212d6a4735ddb5a2a9a9f70
     home: https://cilium.io/
@@ -8642,7 +8642,7 @@ entries:
             advertise LoadBalancer Services to BGP peers defined by Cilium BGP Peering Policies.
     apiVersion: v2
     appVersion: 1.12.6
-    created: "2023-01-27T13:40:03+00:00"
+    created: "2023-01-27T13:40:03Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 6aec70462fa8b9b2aab7e09bedfb35986b4e63393dd4a831162dda9998abce17
     home: https://cilium.io/
@@ -8896,7 +8896,7 @@ entries:
             advertise LoadBalancer Services to BGP peers defined by Cilium BGP Peering Policies.
     apiVersion: v2
     appVersion: 1.12.4
-    created: "2022-11-17T22:50:18+00:00"
+    created: "2022-11-17T22:50:18Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 77a5d01136c7e25ef6e9ed33cd89187fe8c562f661a82dd13c64e0ebc32f5638
     home: https://cilium.io/
@@ -10599,7 +10599,7 @@ entries:
             leaves the cluster and which source addresses to use for that traffic.
     apiVersion: v2
     appVersion: 1.11.13
-    created: "2023-01-27T13:38:10+00:00"
+    created: "2023-01-27T13:38:10Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 81b742bb4742415b6ef221fb9ef981a66fbb480de5b6f7754c32147d7af797b6
     home: https://cilium.io/
@@ -10783,7 +10783,7 @@ entries:
             leaves the cluster and which source addresses to use for that traffic.
     apiVersion: v2
     appVersion: 1.11.11
-    created: "2022-11-17T22:58:28+00:00"
+    created: "2022-11-17T22:58:28Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 2f5093234419af154097241a856747d4ed5d6aad915572a0d2a1e6b7392825bd
     home: https://cilium.io/
@@ -12258,7 +12258,7 @@ entries:
             IP addressing and whether the networking is succesfully operational.
     apiVersion: v2
     appVersion: 1.10.19
-    created: "2023-01-27T13:08:16+00:00"
+    created: "2023-01-27T13:08:16Z"
     description: eBPF-based Networking, Security, and Observability
     digest: 7d3907e13df26442bd3000571d012de609bbef1d715d462c6e9598ea9702d2e8
     home: https://cilium.io/
@@ -12412,7 +12412,7 @@ entries:
             IP addressing and whether the networking is succesfully operational.
     apiVersion: v2
     appVersion: 1.10.17
-    created: "2022-11-17T22:58:51+00:00"
+    created: "2022-11-17T22:58:51Z"
     description: eBPF-based Networking, Security, and Observability
     digest: d249e2b9f21026344885c2e6275596ab582dee0282757856f17f6f5a54d85718
     home: https://cilium.io/
@@ -17376,7 +17376,7 @@ entries:
     version: 1.0.0-rc.5
   - apiVersion: v2
     appVersion: 1.0.0-rc.3
-    created: "2023-10-26T16:52:39+00:00"
+    created: "2023-10-26T16:52:39Z"
     description: Helm chart for Tetragon
     digest: ec15c4237d1d8290274c58c686a877063742fc38dda3b8bab11254b2e7437506
     name: tetragon
@@ -17406,7 +17406,7 @@ entries:
     version: 1.0.0-rc.1
   - apiVersion: v2
     appVersion: 0.11.0
-    created: "2023-09-01T09:14:42+00:00"
+    created: "2023-09-01T09:14:42Z"
     description: Helm chart for Tetragon
     digest: b25a179743c08fe5e2139b514412dacf66f649ef681002dacb4f66458dc4b301
     name: tetragon
@@ -17446,7 +17446,7 @@ entries:
     version: 0.8.4
   - apiVersion: v2
     appVersion: 0.8.3
-    created: "2022-10-20T18:05:19+00:00"
+    created: "2022-10-20T18:05:19Z"
     description: Helm chart for Tetragon
     digest: 7c700c54584f00379b569d45bb7d073303bd6296469e5c27752dec225c3ce118
     name: tetragon
@@ -17466,7 +17466,7 @@ entries:
     version: 0.8.2
   - apiVersion: v2
     appVersion: 0.8.1
-    created: "2022-09-19T18:42:38+00:00"
+    created: "2022-09-19T18:42:38Z"
     description: Helm chart for Tetragon
     digest: aa6a0a1757167579b4f1e18d6e14a677223efca831e9308d3b722cf5840e1ae9
     name: tetragon
@@ -17476,7 +17476,7 @@ entries:
     version: 0.8.1
   - apiVersion: v2
     appVersion: 0.8.0
-    created: "2022-05-22T00:09:23+00:00"
+    created: "2022-05-22T00:09:23Z"
     description: Helm chart for Tetragon
     digest: 7b78ae2a7defa8290c3dd6c4134c76400f99babfac6afbfc8b99b870ba98b3b5
     name: tetragon
