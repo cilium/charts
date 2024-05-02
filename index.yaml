@@ -15455,83 +15455,6 @@ entries:
     urls:
     - cilium-1.9.0-rc0.tgz
     version: 1.9.0-rc0
-  - annotations:
-      artifacthub.io/crds: |
-        - kind: CiliumNetworkPolicy
-          version: v2
-          name: ciliumnetworkpolicy
-          displayName: Cilium Network Policy
-          description: |
-            Cilium Network Policies provide additional functionality beyond what
-            is provided by standard Kubernetes NetworkPolicy such as the ability
-            to allow traffic based on FQDNs, or to filter at Layer 7.
-        - kind: CiliumClusterwideNetworkPolicy
-          version: v2
-          name: ciliumclusterwidenetworkpolicy
-          displayName: Cilium Clusterwide Network Policy
-          description: |
-            Cilium Clusterwide Network Policies support configuring network traffic
-            policiies across the entire cluster, including applying node firewalls.
-        - kind: CiliumExternalWorkload
-          version: v2
-          name: ciliumnetworkpolicy
-          displayName: Cilium External Workload
-          description: |
-            Cilium External Workload supports configuring the ability for external
-            non-Kubernetes workloads to join the cluster.
-        - kind: CiliumLocalRedirectPolicy
-          version: v2
-          name: ciliumlocalredirectpolicy
-          displayName: Cilium Local Redirect Policy
-          description: |
-            Cilium Local Redirect Policy allows local redirects to be configured
-            within a node to support use cases like Node-Local DNS or KIAM.
-        - kind: CiliumNode
-          version: v2
-          name: ciliumnode
-          displayName: Cilium Node
-          description: |
-            Cilium Node represents a node managed by Cilium. It contains a
-            specification to control various node specific configuration aspects
-            and a status section to represent the status of the node.
-        - kind: CiliumIdentity
-          version: v2
-          name: ciliumidentity
-          displayName: Cilium Identity
-          description: |
-            Cilium Identity allows introspection into security identities that
-            Cilium allocates which identify sets of labels that are assigned to
-            individual endpoints in the cluster.
-        - kind: CiliumEndpoint
-          version: v2
-          name: ciliumendpoint
-          displayName: Cilium Endpoint
-          description: |
-            Cilium Endpoint represents the status of individual pods or nodes in
-            the cluster which are managed by Cilium, including enforcement status,
-            IP addressing and whether the networking is succesfully operational.
-    apiVersion: v2
-    appVersion: 1.9-dev
-    created: "2020-12-04T18:50:45+01:00"
-    description: eBPF-based Networking, Security, and Observability
-    digest: e244a7e42419aa4663e7d48e26bf72b232cfdcb0306e403cb91b197f8f696fb8
-    home: https://cilium.io/
-    icon: https://cdn.jsdelivr.net/gh/cilium/cilium@v1.9/Documentation/images/logo-solo.svg
-    keywords:
-    - BPF
-    - eBPF
-    - Kubernetes
-    - Networking
-    - Security
-    - Observability
-    - Troubleshooting
-    kubeVersion: '>= 1.12.0-0'
-    name: cilium
-    sources:
-    - https://github.com/cilium/cilium
-    urls:
-    - cilium-1.9-dev.tgz
-    version: 1.9-dev
   - apiVersion: v1
     appVersion: 1.8.13
     created: "2021-11-05T16:41:52-07:00"
@@ -16419,55 +16342,6 @@ entries:
     - cilium-1.8.0-rc1.tgz
     version: 1.8.0-rc1
   - apiVersion: v1
-    appVersion: 1.8-dev
-    created: "2020-06-22T18:37:46+02:00"
-    dependencies:
-    - condition: agent.enabled
-      name: agent
-      repository: ""
-      version: 1.8-dev
-    - condition: config.enabled
-      name: config
-      repository: ""
-      version: 1.8-dev
-    - condition: global.hubble.relay.enabled
-      name: hubble-relay
-      repository: ""
-      version: 1.8-dev
-    - condition: global.hubble.ui.enabled
-      name: hubble-ui
-      repository: ""
-      version: 1.8-dev
-    - condition: operator.enabled
-      name: operator
-      repository: ""
-      version: 1.8-dev
-    - condition: global.etcd.managed
-      name: managed-etcd
-      repository: ""
-      version: 1.8-dev
-    - condition: preflight.enabled
-      name: preflight
-      repository: ""
-      version: 1.8-dev
-    - condition: global.nodeinit.enabled
-      name: nodeinit
-      repository: ""
-      version: 1.8-dev
-    - condition: global.prometheus.enabled && global.prometheus.serviceMonitor.enabled
-      name: prometheus-crd
-      repository: ""
-      version: 1.8-dev
-    description: Helm chart for Cilium
-    digest: c983eb0af7eb6d3fbfb5d94c5954ca91db853b359173c7932e44eb1c3b4de45d
-    home: https://cilium.io/
-    name: cilium
-    sources:
-    - https://github.com/cilium/cilium
-    urls:
-    - cilium-1.8-dev.tgz
-    version: 1.8-dev
-  - apiVersion: v1
     appVersion: 1.7.16
     created: "2021-04-20T16:49:47-07:00"
     dependencies:
@@ -17152,42 +17026,6 @@ entries:
     - cilium-1.7.0-rc3.tgz
     version: 1.7.0-rc3
   - apiVersion: v1
-    appVersion: 1.7-dev
-    created: "2020-02-19T09:16:25+01:00"
-    dependencies:
-    - condition: agent.enabled
-      name: agent
-      repository: ""
-      version: 1.7-dev
-    - condition: config.enabled
-      name: config
-      repository: ""
-      version: 1.7-dev
-    - condition: operator.enabled
-      name: operator
-      repository: ""
-      version: 1.7-dev
-    - condition: global.etcd.managed
-      name: managed-etcd
-      repository: ""
-      version: 1.7-dev
-    - condition: preflight.enabled
-      name: preflight
-      repository: ""
-      version: 1.7-dev
-    - condition: global.nodeinit.enabled
-      name: nodeinit
-      repository: ""
-      version: 1.7-dev
-    description: Helm chart for Cilium
-    digest: c7637bb01c5118d7f989a9d8710fcaa0ac48374141291c8cccf68e627cbac720
-    name: cilium
-    sources:
-    - https://github.com/cilium/cilium
-    urls:
-    - cilium-1.7-dev.tgz
-    version: 1.7-dev
-  - apiVersion: v1
     appVersion: 1.6.12
     created: "2020-09-30T17:01:49-07:00"
     dependencies:
@@ -17475,42 +17313,6 @@ entries:
     urls:
     - cilium-1.6.5.tgz
     version: 1.6.5
-  - apiVersion: v1
-    appVersion: 1.6-dev
-    created: "2020-02-11T15:01:31+01:00"
-    dependencies:
-    - condition: agent.enabled
-      name: agent
-      repository: ""
-      version: 1.6-dev
-    - condition: config.enabled
-      name: config
-      repository: ""
-      version: 1.6-dev
-    - condition: operator.enabled
-      name: operator
-      repository: ""
-      version: 1.6-dev
-    - condition: global.etcd.managed
-      name: managed-etcd
-      repository: ""
-      version: 1.6-dev
-    - condition: preflight.enabled
-      name: preflight
-      repository: ""
-      version: 1.6-dev
-    - condition: global.nodeinit.enabled
-      name: nodeinit
-      repository: ""
-      version: 1.6-dev
-    description: Helm chart for Cilium
-    digest: e6a0373be435d69521c649d8dff23e4a5f1dc7dd3be392d14d2c2d9748907627
-    name: cilium
-    sources:
-    - https://github.com/cilium/cilium
-    urls:
-    - cilium-1.6-dev.tgz
-    version: 1.6-dev
   tetragon:
   - apiVersion: v2
     appVersion: 1.1.0
@@ -17682,4 +17484,4 @@ entries:
     urls:
     - tetragon-0.8.0.tgz
     version: 0.8.0
-generated: "2024-04-29T16:52:59.816005193+02:00"
+generated: "2024-05-02T17:56:03.672220218Z"
