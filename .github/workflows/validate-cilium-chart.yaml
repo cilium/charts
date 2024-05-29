@@ -35,7 +35,8 @@ jobs:
               # Download the chart from the Helm repository on push.
               helm repo add cilium https://helm.cilium.io
               helm repo update
-              until helm pull cilium/cilium -d tmp --version ${{ steps.vars.outputs.chartVersion }}
+              mkdir tmp
+              until helm pull cilium/cilium -d tmp --version "${chart_version}"
               do
                 echo "helm pull failed. Retrying..."
                 sleep 1
