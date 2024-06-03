@@ -40,6 +40,7 @@ jobs:
               do
                 echo "helm pull failed. Retrying..."
                 sleep 1
+                helm repo update
               done
               echo "chartPath=tmp/cilium-${chart_version}.tgz" >> $GITHUB_OUTPUT
             fi
