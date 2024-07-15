@@ -4,6 +4,7 @@ set -ex
 shopt -s expand_aliases
 
 DOCKER=${DOCKER:-docker}
+ORG=${ORG:-cilium}
 
 cosign() {
   "${DOCKER}" run --rm gcr.io/projectsigstore/cosign:v2.2.4 "$@"
@@ -45,8 +46,16 @@ main() {
 
     CWD=$(git rev-parse --show-toplevel)
     chart_dir="${PROJECT}/install/kubernetes"
-    rm -rf "${PROJECT}"
-    git clone --depth 1 --branch "$version" "https://github.com/cilium/${PROJECT}.git"
+    if [ -d "${PROJECT}" ]; then
+        cd "${PROJECT}"
+        git stash
+        remote=$(git remote -v | grep "${ORG}/${PROJECT}" | awk '{print $1;exit}')
+        git fetch "${remote}"
+        git checkout "$version"
+        cd -
+    else
+        git clone --depth 1 --branch "$version" "https://github.com/cilium/${PROJECT}.git"
+    fi
     cd "${chart_dir}" || exit
 
     ## Cilium generate helm from templates (digest substitution)
