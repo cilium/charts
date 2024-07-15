@@ -37,7 +37,7 @@ main() {
         exit 1
     fi
 
-    if echo "$ersion" | grep "^[0-9]+\.[0-9]+\.[0-9]+[0-9a-zA-Z-_.]*$" ; then
+    if echo "$ersion" | grep "^[0-9]+\.[0-9]+\.[0-9]+[0-9a-zA-Z_.-]*$" ; then
         echo "bad version '$version'"
         usage
         exit 1
