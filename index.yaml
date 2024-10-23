@@ -3490,9 +3490,9 @@ entries:
             CiliumPodIPPool defines an IP pool that can be used for pooled IPAM (i.e. the multi-pool IPAM mode).
     apiVersion: v2
     appVersion: 1.14.16
-    created: "2024-10-11T21:38:37.489766156Z"
+    created: "2024-10-23T09:22:43.942631041Z"
     description: eBPF-based Networking, Security, and Observability
-    digest: b6b755176cb61d31b32d5107bedffef51b1d2936d6de5eed6036815fca6834e4
+    digest: 2889e1e35d58560fec4ea0fba61011b3f4cd8c3d4d7d473e3d4de092cf0393e8
     home: https://cilium.io/
     icon: https://cdn.jsdelivr.net/gh/cilium/cilium@main/Documentation/images/logo-solo.svg
     keywords:
@@ -20554,4 +20554,4 @@ entries:
     urls:
     - tetragon-0.8.0.tgz
     version: 0.8.0
-generated: "2024-10-11T23:02:59.483940884Z"
+generated: "2024-10-23T09:22:43.933383488Z"
