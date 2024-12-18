@@ -87,9 +87,9 @@ entries:
         can be used for pooled IPAM (i.e. the multi-pool IPAM mode).\n"
     apiVersion: v2
     appVersion: 1.17.0-rc.0
-    created: "2024-12-18T15:35:14.424377584Z"
+    created: "2024-12-18T15:38:28.700108392Z"
     description: eBPF-based Networking, Security, and Observability
-    digest: 9e528c3cd0b5be7f416ed93b9fde8946259b2a40a934b8b205fb9c39a09934e3
+    digest: f2930855d7602f1729f52c871d48879d47b86c928dab4d53029876fa96717995
     home: https://cilium.io/
     icon: https://cdn.jsdelivr.net/gh/cilium/cilium@main/Documentation/images/logo-solo.svg
     keywords:
@@ -21606,4 +21606,4 @@ entries:
     urls:
     - tetragon-0.8.0.tgz
     version: 0.8.0
-generated: "2024-12-18T15:35:14.414767391Z"
+generated: "2024-12-18T15:38:28.689656249Z"
