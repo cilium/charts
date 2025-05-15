@@ -296,7 +296,7 @@ entries:
         defines a configuration for Gateway API GatewayClass.\n"
     apiVersion: v2
     appVersion: 1.18.0-pre.0
-    created: "2025-05-15T22:02:28.819498943Z"
+    created: "2025-05-15T22:03:03.235982699Z"
     description: eBPF-based Networking, Security, and Observability
     digest: feb60a2dbbc53053862bb491db3a740b176a934e14c6104dbccb14c9535c76f4
     home: https://cilium.io/
@@ -1670,9 +1670,9 @@ entries:
         can be used for pooled IPAM (i.e. the multi-pool IPAM mode).\n"
     apiVersion: v2
     appVersion: 1.16.10
-    created: "2025-05-15T17:01:10.806349335Z"
+    created: "2025-05-15T22:03:03.218879019Z"
     description: eBPF-based Networking, Security, and Observability
-    digest: b634146472ad2e865377a6c03675a902f16aa2b555ac6be4c2e9b393a49b034c
+    digest: f3d93c43c082440d439b3c11efa126a622e3b33dd764c9d2fcf15df9cd3cc783
     home: https://cilium.io/
     icon: https://cdn.jsdelivr.net/gh/cilium/cilium@main/Documentation/images/logo-solo.svg
     keywords:
@@ -23874,4 +23874,4 @@ entries:
     urls:
     - tetragon-0.8.0.tgz
     version: 0.8.0
-generated: "2025-05-15T22:02:28.791356923Z"
+generated: "2025-05-15T22:03:03.204919143Z"
