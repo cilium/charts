@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -eux
 shopt -s expand_aliases
 
 DOCKER=${DOCKER:-docker}
