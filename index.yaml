@@ -3789,9 +3789,9 @@ entries:
         can be used for pooled IPAM (i.e. the multi-pool IPAM mode).\n"
     apiVersion: v2
     appVersion: 1.15.17
-    created: "2025-05-15T22:02:28.80711337Z"
+    created: "2025-05-15T15:57:44.172092298Z"
     description: eBPF-based Networking, Security, and Observability
-    digest: 51c4719c8d5ca61b2d215c2159ee44cad6920b610735dbca09918d6c09547ffa
+    digest: 1556adcf45b4bbac8be628f73cdec41ce5c123bf5cb32bd620a678e44f2a403a
     home: https://cilium.io/
     icon: https://cdn.jsdelivr.net/gh/cilium/cilium@main/Documentation/images/logo-solo.svg
     keywords:
