@@ -21,10 +21,13 @@ jobs:
         id: vars
         run: |
           # Get last commit message
-          readonly local last_commit_log=$(git log -1 --grep "^Add cilium" --pretty=format:"%s")
+          readonly local last_commit_log=$(git log -1 --grep "^Add cilium" \
+                                                      --pretty=format:"%s")
           echo "last commit log: $last_commit_log"
 
-          readonly local chart_version=$(echo "$last_commit_log" | grep -Eo "Add cilium v[^@]+" | sed 's/Add\ cilium\ v//' )
+          readonly local chart_version=$(echo "$last_commit_log" \
+                                         | grep -Eo "Add cilium v[^@]+" \
+                                         | sed 's/Add\ cilium\ v//' )
           echo "Helm chart detected version: '${chart_version}'"
 
           if [[ -n "${chart_version}" ]]; then
@@ -50,3 +53,51 @@ jobs:
         if: ${{ steps.vars.outputs.chartPath != '' }}
         run: |
           ./validate_helm_chart.sh ${{ steps.vars.outputs.chartPath }}
+
+      - name: Install Cilium CLI
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          curl -LO https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz
+          curl -sSL --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum}
+          sha256sum --check cilium-linux-amd64.tar.gz.sha256sum
+          sudo tar -xzvf cilium-linux-amd64.tar.gz -C /usr/local/bin
+          rm cilium-linux-amd64.tar.gz{,.sha256sum}
+
+      - name: Download kind-config.yaml
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          curl -LO https://raw.githubusercontent.com/cilium/cilium/main/.github/kind-config.yaml
+
+      - name: Create k8s Kind Cluster
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        uses: helm/kind-action@a1b0e391336a6ee6713a0583f8c6240d70863de3 # v1.12.0
+        with:
+          config: kind-config.yaml
+
+      - name: Install Cilium
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          helm install cilium ./${{ steps.vars.outputs.chartPath }} \
+              --version "${{ steps.vars.outputs.chartVersion }}" \
+              --namespace kube-system
+
+      - name: Check Cilium Status
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          cilium status --wait --wait-duration 1m --interactive=false
+
+      - name: Post-test information gathering
+        if: ${{ failure() }}
+        run: |
+          cilium status
+          kubectl get pods --all-namespaces -o wide -v=6
+          cilium sysdump --output-filename cilium-sysdump-out
+        shell: bash {0} # Disable default fail-fast behaviour so that all commands run independently
+
+      - name: Upload artifacts
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: cilium-sysdump-out.zip
+          path: cilium-sysdump-out.zip
+          retention-days: 5
