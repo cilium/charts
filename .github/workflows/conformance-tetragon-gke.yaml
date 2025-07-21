@@ -53,7 +53,7 @@ jobs:
           fi
 
       - name: Set up gcloud CLI
-        uses: google-github-actions/setup-gcloud@77e7a554d41e2ee56fc945c52dfd3f33d12def9a
+        uses: google-github-actions/setup-gcloud@6a7c903a70c8625ed6700fa299f5ddb4ca6022e9
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
