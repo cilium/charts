@@ -42,7 +42,10 @@ jobs:
         id: 'auth'
         uses: 'google-github-actions/auth@140bb5113ffb6b65a7e9b937a81fa96cf5064462'
         with:
-          credentials_json: '${{ secrets.GCP_PR_SA_KEY }}'
+          workload_identity_provider: ${{ secrets.GCP_PR_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_PR_SA }}
+          create_credentials_file: true
+          export_environment_variables: true
 
       - name: Should it be e2e tested?
         run: |
