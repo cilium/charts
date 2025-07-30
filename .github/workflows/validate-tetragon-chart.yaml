@@ -1,0 +1,95 @@
+name: Validate Tetragon Helm chart
+
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up job variables
+        id: vars
+        run: |
+          # Get last commit message
+          readonly local last_commit_log=$(git log -1 --grep "^Add tetragon" \
+                                                      --pretty=format:"%s")
+          echo "last commit log: $last_commit_log"
+
+          readonly local chart_version=$(echo "$last_commit_log" \
+                                          | grep -Eo "Add tetragon v[^@]+" \
+                                          | sed 's/Add\ tetragon\ v//' )
+          echo "Helm chart detected version: '${chart_version}'"
+
+          if [[ -n "${chart_version}" ]]; then
+            if [ "${{ github.event_name }}" = "pull_request" ] ; then
+              # Use the local chart file for pull requests.
+              echo "chartPath=tetragon-${chart_version}.tgz" >> $GITHUB_OUTPUT
+            else
+              # Download the chart from the Helm repository on push.
+              helm repo add cilium https://helm.cilium.io
+              helm repo update
+              mkdir tmp
+              until helm pull cilium/tetragon -d tmp --version "${chart_version}"
+              do
+                echo "helm pull failed. Retrying..."
+                sleep 1
+                helm repo update
+              done
+              echo "chartPath=tmp/tetragon-${chart_version}.tgz" >> $GITHUB_OUTPUT
+            fi
+            echo "chartVersion=${chart_version}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Validate Helm chart
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          ./validate_helm_chart.sh ${{ steps.vars.outputs.chartPath }}
+
+      - name: Download kind-config.yaml
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          curl -LO https://raw.githubusercontent.com/cilium/tetragon/refs/heads/main/contrib/kind/kind-config.yaml
+
+      - name: Create k8s Kind Cluster
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        uses: helm/kind-action@a1b0e391336a6ee6713a0583f8c6240d70863de3 # v1.12.0
+        with:
+          config: kind-config.yaml
+
+      - name: Install Tetragon
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          EXTRA_HELM_FLAGS=(--set tetragon.hostProcPath=/procHost)
+          helm install tetragon ${EXTRA_HELM_FLAGS[@]} ./${{ steps.vars.outputs.chartPath }} \
+              --version ${{ steps.vars.outputs.chartVersion }} \
+              --namespace kube-system
+          kubectl rollout status -n kube-system ds/tetragon -w
+
+      - name: Check Cluster Status
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        run: |
+          kubectl get pods --all-namespaces -o wide
+
+      - name: Check Tetragon Status
+        if: ${{ steps.vars.outputs.chartPath != '' }}
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
+        with:
+          timeout_minutes: 1
+          max_attempts: 10
+          retry_wait_seconds: 4
+          command: |
+            if [[ -n "$(kubectl exec -n kube-system ds/tetragon -c tetragon -- tetra status | grep running)" ]]; then
+              exit 0
+            else
+              exit 1
+            fi
