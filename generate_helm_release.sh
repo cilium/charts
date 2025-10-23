@@ -86,7 +86,7 @@ main() {
             --certificate-github-workflow-name "Image Release Build" \
             --certificate-github-workflow-ref "refs/tags/${version}" \
             --certificate-identity "https://github.com/cilium/${PROJECT}/.github/workflows/build-images-releases.yaml@refs/tags/${version}" \
-            "quay.io/cilium/${image}:${version}" 2>/dev/null | jq '.[].critical.image.["docker-manifest-digest"]')
+            "quay.io/cilium/${image}:${version}" 2>/dev/null | jq '.[0].critical.image.["docker-manifest-digest"]')
           echo "export $variable_name := $digest" >> Makefile.digests.tmp
         done
 
