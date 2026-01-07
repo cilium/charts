@@ -10,6 +10,18 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 6
+    strategy:
+      matrix:
+        chart-type:
+          - name: "Legacy Helm Chart"
+
+          - name: "OCI Chart (quay.io)"
+            registry: "oci://quay.io/cilium/cilium"
+
+          - name: "OCI Chart (docker.io)"
+            registry: "oci://docker.io/cilium/cilium"
+
+    name: ${{ matrix.chart-type.name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
@@ -29,23 +41,32 @@ jobs:
                                          | grep -Eo "Add cilium v[^@]+" \
                                          | sed 's/Add\ cilium\ v//' )
           echo "Helm chart detected version: '${chart_version}'"
+          echo "chartVersion=${chart_version}" >> $GITHUB_OUTPUT
 
           if [[ -n "${chart_version}" ]]; then
-            if [ "${{ github.event_name }}" = "pull_request" ] ; then
-              # Use the local chart file for pull requests.
-              echo "chartPath=cilium-${chart_version}.tgz" >> $GITHUB_OUTPUT
+            if [[ -n "${{ matrix.chart-type.registry }}" ]]; then
+              # OCI chart
+              echo "isOCI=true" >> $GITHUB_OUTPUT
+              echo "chartPath=${{ matrix.chart-type.registry }}:${chart_version}" >> $GITHUB_OUTPUT
             else
-              # Download the chart from the Helm repository on push.
-              helm repo add cilium https://helm.cilium.io
-              helm repo update
-              mkdir tmp
-              until helm pull cilium/cilium -d tmp --version "${chart_version}"
-              do
-                echo "helm pull failed. Retrying..."
-                sleep 1
+              # Non-OCI chart
+              echo "isOCI=false" >> $GITHUB_OUTPUT
+              if [ "${{ github.event_name }}" = "pull_request" ] ; then
+                # Use the local chart file for pull requests.
+                echo "chartPath=./cilium-${chart_version}.tgz" >> $GITHUB_OUTPUT
+              else
+                # Download the chart from the Helm repository on push.
+                helm repo add cilium https://helm.cilium.io
                 helm repo update
-              done
-              echo "chartPath=tmp/cilium-${chart_version}.tgz" >> $GITHUB_OUTPUT
+                mkdir tmp
+                until helm pull cilium/cilium -d tmp --version "${chart_version}"
+                do
+                  echo "helm pull failed. Retrying..."
+                  sleep 1
+                  helm repo update
+                done
+                echo "chartPath=./tmp/cilium-${chart_version}.tgz" >> $GITHUB_OUTPUT
+              fi
             fi
           fi
 
@@ -77,7 +98,7 @@ jobs:
       - name: Install Cilium
         if: ${{ steps.vars.outputs.chartPath != '' }}
         run: |
-          helm install cilium ./${{ steps.vars.outputs.chartPath }} \
+          helm install cilium ${{ steps.vars.outputs.chartPath }} \
               --version "${{ steps.vars.outputs.chartVersion }}" \
               --namespace kube-system
 
