@@ -16,10 +16,7 @@ jobs:
           - name: "Legacy Helm Chart"
 
           - name: "OCI Chart (quay.io)"
-            registry: "oci://quay.io/cilium/cilium"
-
-          - name: "OCI Chart (docker.io)"
-            registry: "oci://docker.io/cilium/cilium"
+            registry: "oci://quay.io/cilium/charts/cilium"
 
     name: ${{ matrix.chart-type.name }}
     steps:
