@@ -30561,6 +30561,17 @@ entries:
     version: 1.6.5
   tetragon:
   - apiVersion: v2
+    appVersion: 1.7.1
+    created: "2026-08-25T11:43:51.157494769Z"
+    description: Helm chart for Tetragon
+    digest: 79ec0f7d35b6fcad99ca317348deac136c00b674430c28be17aa818d2015c632
+    icon: https://tetragon.io/images/tetragon-shield.png
+    name: tetragon
+    type: application
+    urls:
+    - tetragon-1.7.1.tgz
+    version: 1.7.1
+  - apiVersion: v2
     appVersion: 1.7.0
     created: "2026-04-29T17:24:10.354818612Z"
     description: Helm chart for Tetragon
@@ -30845,4 +30856,4 @@ entries:
     urls:
     - tetragon-0.8.0.tgz
     version: 0.8.0
-generated: "2026-08-18T10:01:03.859836705Z"
+generated: "2026-08-25T11:43:51.153136037Z"
