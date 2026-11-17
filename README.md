@@ -16,6 +16,7 @@ This repository holds helm templates for the following Cilium releases:
 * [v1.20.0-pre.2](https://github.com/cilium/cilium/releases/tag/v1.20.0-pre.2) (_[source](https://github.com/cilium/cilium/tree/v1.20.0-pre.2/install/kubernetes/cilium)_)
 * [v1.20.0-pre.1](https://github.com/cilium/cilium/releases/tag/v1.20.0-pre.1) (_[source](https://github.com/cilium/cilium/tree/v1.20.0-pre.1/install/kubernetes/cilium)_)
 * [v1.20.0-pre.0](https://github.com/cilium/cilium/releases/tag/v1.20.0-pre.0) (_[source](https://github.com/cilium/cilium/tree/v1.20.0-pre.0/install/kubernetes/cilium)_)
+* [v1.19.11](https://github.com/cilium/cilium/releases/tag/v1.19.11) (_[source](https://github.com/cilium/cilium/tree/v1.19.11/install/kubernetes/cilium)_)
 * [v1.19.10](https://github.com/cilium/cilium/releases/tag/v1.19.10) (_[source](https://github.com/cilium/cilium/tree/v1.19.10/install/kubernetes/cilium)_)
 * [v1.19.9](https://github.com/cilium/cilium/releases/tag/v1.19.9) (_[source](https://github.com/cilium/cilium/tree/v1.19.9/install/kubernetes/cilium)_)
 * [v1.19.8](https://github.com/cilium/cilium/releases/tag/v1.19.8) (_[source](https://github.com/cilium/cilium/tree/v1.19.8/install/kubernetes/cilium)_)
