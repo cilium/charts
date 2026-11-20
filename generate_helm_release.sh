@@ -11,7 +11,7 @@ cosign() {
 }
 
 helm() {
-  "${DOCKER}" run --user "$(id -u):$(id -g)" --rm -v "$(pwd)":/apps alpine/helm:3.12.0 "$@"
+  "${DOCKER}" run --user "$(id -u):$(id -g)" --rm -v "$(pwd)":/apps alpine/helm:4.3.0@sha256:a6cf54599ccb99d90cf0712b30f03fdb3cab062e6b94e0418cc4db7e8a1464b2 "$@"
 }
 
 jq () {
